@@ -16,6 +16,7 @@ class Post(models.Model):
     userId = models.ForeignKey(Profile,related_name='profile',on_delete=models.CASCADE)
 
 
+
 class Comment(models.Model):
     name = models.CharField(max_length=100)
     email = models.CharField(max_length=100)

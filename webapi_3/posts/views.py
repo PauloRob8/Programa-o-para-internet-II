@@ -17,6 +17,25 @@ class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ProfileSerializer
     name = 'profile-detail'
 
+class ProfilePosts(generics.ListCreateAPIView):
+    queryset = Profile.objects.all()
+    serializer_class = ProfilePosts
+    name='profile-posts'
+
+class ProfilePostsDetail(generics.RetrieveUpdateDestroyAPIView):
+    quersyset=Profile.objects.all()
+    serializaer_class = ProfilePosts
+    name='profile-posts-detail'
+
+class PostList(generics.ListCreateAPIView):
+    queryset=Post.objects.all()
+    serializer_class = PostSerializer
+    name = 'post-list'
+
+class PostDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset=Post.objects.all()
+    serializer_class = PostSerializer
+    name = 'post-detail'
 
 class ApiRoot(generics.GenericAPIView):
     name = 'api-root'
@@ -26,5 +45,6 @@ class ApiRoot(generics.GenericAPIView):
         return Response({
             'profiles': reverse(ProfileList.name,
             request=request),
+            'profile-posts': reverse(ProfilePosts.name,request=request),
 
 })
