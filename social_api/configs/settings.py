@@ -51,7 +51,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'webapi_3.urls'
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    )
+}
+
+ROOT_URLCONF = 'configs.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'webapi_3.wsgi.application'
+WSGI_APPLICATION = 'configs.wsgi.application'
 
 
 # Database
