@@ -27,3 +27,4 @@ No projeto existiram **Usuários** os mesmos possuem **Perfis**
 * Apenas o Perfil dono da postagem pode excluir comentários de sua postagem.
 
 ## Apresentação
+Apresentação do projeto, com testes e verificações: [video](https://www.youtube.com/watch?v=AtcUQRYjYC4&feature=youtu.be&hd=1)
