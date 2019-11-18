@@ -37,8 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'posts',
     'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -54,8 +56,16 @@ MIDDLEWARE = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-    )
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_THROTTLE_CLASSES': ( 
+        'rest_framework.throttling.AnonRateThrottle', 
+        'rest_framework.throttling.UserRateThrottle', 
+        ), 
+        #'DEFAULT_THROTTLE_RATES': { 
+            #'anon': '1/hour', 
+            #'user': '1/hour', 
+        #}
 }
 
 ROOT_URLCONF = 'configs.urls'

@@ -10,7 +10,7 @@ class Address(models.Model):
 
 
 class Profile(models.Model):
-    owner = models.ForeignKey('auth.User',related_name='posts',on_delete = models.CASCADE)
+    owner = models.ForeignKey('auth.User',related_name='posts',on_delete = models.CASCADE,default=1)
     name = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
     address = models.OneToOneField(Address, models.CASCADE, related_name='address')

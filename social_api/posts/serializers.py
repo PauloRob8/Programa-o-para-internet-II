@@ -39,6 +39,7 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
         return instance
 
 class PostSerializer(serializers.HyperlinkedModelSerializer):
+    userId = serializers.SlugRelatedField(queryset=Profile.objects.all(),slug_field='name')
     class Meta:
         model = Post
         fields = ('pk','title','body','url','userId')

@@ -1,0 +1,4 @@
+django_extensions == 2.2.5
+django == 2.0
+rest_framework
+
