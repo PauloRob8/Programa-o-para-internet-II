@@ -1,4 +1,4 @@
 django_extensions == 2.2.5
-django == 2.0.11
+django == 3.0.2
 rest_framework
 
