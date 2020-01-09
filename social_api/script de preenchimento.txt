@@ -1,0 +1,4 @@
+Insira os seguinte comandos para criar usuários via shell:
+from django.contrib.auth.models import User
+user = User.objects.create_user('joao','joao@joao.com','joao123')
+user.save()
